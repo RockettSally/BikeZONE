@@ -1,0 +1,1 @@
+<li><g:link controller="cliente" action="index">Clientes</g:link></li>
