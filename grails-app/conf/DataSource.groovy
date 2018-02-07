@@ -1,8 +1,8 @@
 dataSource {
     pooled = true
     driverClassName = "com.mysql.jdbc.Driver"
-    username = "grails"
-    password = "admin"
+    username = "root"
+    password = "@dmin"
 }
 hibernate {
     cache.use_second_level_cache = true

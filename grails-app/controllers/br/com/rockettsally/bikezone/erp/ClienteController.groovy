@@ -23,7 +23,7 @@ public class ClienteController {
 			List clienteList = Cliente.findAll();
 			render(template:"../cliente/tabela",model:[clienteList:clienteList]);
 		} catch (Exception e) {
-			log.error("Ocorreu um erro no método 'buscarClientes' do controller 'Cliente' " + e.printStackTrace());
+			log.error("Ocorreu um erro no método 'buscarClientes' do controller 'Cliente' " , e.printStackTrace());
 			render(status:HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -63,7 +63,7 @@ public class ClienteController {
 			
 			render result as JSON;
 		} catch (Exception e) {
-			log.error("Ocorreu um erro no método 'salvar' do controller 'Cliente' " + e.printStackTrace());
+			log.error("Ocorreu um erro no método 'salvar' do controller 'Cliente' " , e.printStackTrace());
 			render(status:HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -90,7 +90,7 @@ public class ClienteController {
 			render result as JSON;
 			
 		} catch (Exception e) {
-			log.error("Ocorreu um erro no método 'deletar' do controller 'Cliente' " + e.printStackTrace());
+			log.error("Ocorreu um erro no método 'deletar' do controller 'Cliente' " , e.printStackTrace());
 			render(status:HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		

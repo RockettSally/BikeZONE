@@ -54,7 +54,9 @@ function buscarClientes(){
 		success: function(data){
 			jQuery('#tabelaClientes').html(data);
 			jQuery('#tabelaClientes').show(500);
-			jQuery("#tableClientesList").DataTable();
+			jQuery("#tableClientesList").DataTable({
+			    responsive: true
+			});
 		},
 		error: function(request, status, error, data) {
 			dialogError('Oops','Ocorreu um erro interno de Servidor');

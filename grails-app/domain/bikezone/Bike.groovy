@@ -9,7 +9,7 @@ class Bike {
 	String relacao
 	Cliente cliente
 	
-	static belongsTo = [cliente:Cliente,tipoBike:TipoBike]
+	static belongsTo = [cliente:Cliente, tipoBike:TipoBike]
 	
     static constraints = {
 		marca(nullable:true)
