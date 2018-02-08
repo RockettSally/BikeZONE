@@ -13,19 +13,19 @@
 		<br/>
 		<div class="row">
 			<div class="col s12 right-align">
-				<a href="javascript:void(0)" id="cadastrarBike" class="blue waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar ${bikeLabel}</a>
+				<a href="javascript:void(0)" id="cadastrarBike" class="blue waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i> Cadastrar ${bikeLabel}</a>
 			</div>
 		</div>
-		<%--<!-- Form Aqui -->
-		<div id="divFormCliente" class="display-none">
+		<%--<!-- Form Aqui -->--%>
+		<div id="divFormBike" class="display-none">
 			
 		</div>
 		<div class="row">
 			<!-- Tabela Aqui -->
-			<div id="tabelaClientes" class="col s12 display-none">
+			<div id="tabelaBikes" class="col s12 display-none">
 			
 			</div>
-		</div>--%>
+		</div>
 		<g:javascript src="bikes.js"/>
 		</body>
 </html>

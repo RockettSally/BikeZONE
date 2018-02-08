@@ -1,8 +1,5 @@
 jQuery(document).ready(function(){
-	
 	jQuery(".button-collapse").sideNav();
-	updateMasks();
-	
 });
 
 function showLoading(msg){
@@ -32,4 +29,8 @@ function updateMasks(){
 
 function successToast(msg){
 	Materialize.toast(msg, 3000, 'rounded green');
+}
+
+function updateFilters(){
+	jQuery('select').material_select();
 }

@@ -69,6 +69,7 @@ function buscarClientes(){
 }
 
 function cadastrarCliente(){
+	showLoading('Carregando Formulário...');
 	jQuery.ajax({
 		url: "cadastrar",
 		method: "GET",
@@ -83,6 +84,7 @@ function cadastrarCliente(){
 		},
 		complete: function(){
 			Materialize.updateTextFields();
+			hideLoading();
 			updateMasks();
 			return;
 		}
