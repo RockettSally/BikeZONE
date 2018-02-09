@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Início</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<p ion-text class="text-center" *ngIf="loginData.nome != ''">Bem vindo {{loginData.nome}}!</p>
+	<hr/>
+	<br/>
+	<ion-list>
+		<h4>Próxima Aula</h4>
+		<ion-item *ngIf="aula?.status == 'ok'" (click)="aulaTapped($event, aula)">
+			<label>
+				<b>{{aula.curso}}</b>&nbsp;&nbsp;<ion-badge class="reposicao" *ngIf="aula.aulaOriginalId" item-end><small>Reposição</small></ion-badge><br/><br/>
+				<p><span>Data da Aula:</span> {{aula.dataHoraInicio | date:'dd/MM/yyyy'}}</p>
+				<p><span>Horário:</span> {{aula.dataHoraInicio | date:'HH:mm'}} até {{aula.dataHoraTermino | date:'HH:mm'}} </p>
+				<p><span>Professor:</span> {{aula.professor}}</p>
+				<p><ion-badge *ngIf="aula.statusAula == 'Realizada'" item-end>{{aula.statusAula}}</ion-badge><span *ngIf="aula.statusAula != 'Realizada' && aula.statusAula != 'Agendada'" item-end>{{aula.statusAula}}</span> <span *ngIf="aula.statusAluno">{{aula.statusAluno}}</span></p>
+			</label>
+			<button ion-button item-end outline>
+				<ion-icon name="arrow-forward"></ion-icon>
+			</button>
+		</ion-item>
+		<div *ngIf="aula?.status == 'error' || !aula" class="empty">
+			<small class="spanEmpty text-center">{{aula?.msg}}{{msgAula}}.</small>
+		</div>
+		<br/>
+		<h4>Última Conversa</h4>	
+		<ion-item *ngIf="conversa?.status == 'ok'" (click)="conversaTapped($event, conversa)">
+              <label>
+                  <b>{{conversa.nome}}</b><br/>
+				  <p ion-text padding>{{conversa.descricao}}</p>
+    	          <p><span>Data:</span> {{conversa.dataContato | date:'dd/MM/yyyy - HH:mm'}}</p>
+                  <p><span>Tipo:</span> {{conversa.tipo}}</p>
+              </label>
+              <button ion-button item-end outline>
+                  <ion-icon name="arrow-forward"></ion-icon>
+              </button>
+        </ion-item>
+		<div *ngIf="conversa?.status == 'error' || !conversa" class="empty">
+          <small class="spanEmpty text-center">{{conversa?.msg}}{{msgConversa}}.</small>
+        </div>
+	</ion-list>
+</ion-content>

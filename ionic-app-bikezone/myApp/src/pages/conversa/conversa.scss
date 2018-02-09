@@ -1,0 +1,30 @@
+page-conversa {
+	ion-col ion-item {
+        padding-left: 0 !important;
+    }
+    ion-col ion-item .item-inner {
+        padding-right: 2px !important;
+    }
+    ion-col ion-item span {
+        font-weight: bold;
+    }
+    ion-col .actionsBtn {
+        height: 100%;
+        text-align: center;
+    }
+    ion-col .actionsBtn ion-label {
+        margin-right: 0 !important;
+    }
+    ion-item p {
+        font-size: 0.75em !important;
+        text-overflow: ellipsis;
+    }
+    ion-note {
+        font-size: 12px;
+    }
+    .empty{
+    	text-align:  center;
+    	font-size: 15px;
+    	margin: 15px 0;
+    }
+}

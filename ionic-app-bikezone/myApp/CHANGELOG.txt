@@ -1,0 +1,31 @@
+// ChangeLog do APP do Aluno - Sistema Quality
+
+Este changelog marca todas as alterações do Sistema LANÇADAS na Google Play / App Store.
+Todos os commits entre uma versão de outra devem ser agrupados na próxima release.
+
+//-----------------------------------------------------------------------------------
+
+Versão 1.1.1 @ Rodrigo ->
+- MELHORIAS:
+	*Correção de Bugs.	
+
+Versão 1.1.0 (30/01/2018) @ Douglas ->
+- MELHORIAS:
+	* Melhorias nas requisições - velocidade.
+	* Melhorias nos layouts.
+	* Correções de bugs.
+
+- NOVAS FUNCIONALIDADES:
+	* Visualização de Notas e Boletins
+	* Visualização de Reposições baseadas na Aula Original.
+	* Possibilidade de Impressão de Boletos de Boletos gerados.
+	* Notificações Push de Conversas criadas pela Administração da Escola.
+
+//------------------------------------------------------------------------------------
+
+Versão 1.0.0 (12/01/2018) @ Douglas ->
+- Primeira Release-Stable:
+	* Visualização de Aulas
+	* Visualização de Financeiro
+	* Visualização de Conversas
+	* Home com Próxima Aula e Última Conversa.

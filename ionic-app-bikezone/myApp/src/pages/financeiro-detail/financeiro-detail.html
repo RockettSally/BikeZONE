@@ -1,0 +1,39 @@
+<!--
+  Generated template for the FinanceiroDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Detalhes da Parcela</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-item-group padding>
+        <h1><b>{{item.categoria}}</b></h1>
+        <p><ion-badge *ngIf="item.dataPagamento">PAGO</ion-badge></p>
+        <p><ion-badge color="danger" *ngIf="item.estaPendente">PENDENTE</ion-badge></p>
+    	<span><b>Vencimento:</b> {{item.vencimento | date:'dd/MM/yyyy'}}</span><br/>
+        <span *ngIf="item.dataPagamento"><b>Data de Pagamento:</b> {{item.dataPagamento | date:'dd/MM/yyyy'}}<br/></span>
+        <span *ngIf="item.formaPagamento"><b>Forma Pagamento:</b> {{item.formaPagamento}}<br/></span>
+        <span *ngIf="item.descricao"><b>Descrição:</b>{{item.descricao}}<br/></span><br/>
+    	<span><b>Valor:</b> R$ {{item.valor}}</span><br/>
+        <span><b>Desconto:</b> R$ {{item.desconto}}<br/></span>
+        <span><b>Valor a Pagar:</b> R$ {{item.valorPago}}<br/></span>
+        <span *ngIf="item.dataPagamento && item.valorPago"><b>Valor Pago:</b> R$ {{item.valorPago}}<br/></span>
+		<br/>
+		<ion-row *ngIf="item?.urlBoletoCloud && !item.dataPagamento">
+			<small>via: BoletoCloud</small>
+			<a ion-button block target="_blank" href="{{item.urlBoletoCloud}}" color="secondary"><p class="white-text">IMPRIMIR BOLETO</p></a>
+		</ion-row>
+		<ion-row *ngIf="item?.urlBoletoIugu && !item.dataPagamento">
+			<small>via: IUGU</small>
+			<a ion-button block target="_blank" href="{{item.urlBoletoIugu}}" color="secondary"><p class="white-text">IMPRIMIR BOLETO</p></a>
+		</ion-row>
+	</ion-item-group>
+</ion-content>

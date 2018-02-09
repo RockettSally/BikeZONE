@@ -1,0 +1,42 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<button ion-button menuToggle>
+		<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Notas e Boletins</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<div padding *ngIf="turmas?.length === 0" class="empty">
+		<span class="spanEmpty">{{msg}}</span>
+	</div>
+	<ion-item-group *ngIf="turmas.length > 0">
+		<p padding>Selecione a Turma e a Disciplina.</p>
+		<ion-item>
+			<ion-label fixed>Turma</ion-label>
+			<ion-select (ionChange)="findCursosByTurma($event)" [(ngModel)]="turma" name="turma"> 
+				<ion-option *ngFor="let turma of turmas" value="{{turma.id}}">{{turma.nome}}</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item *ngIf="cursos?.length > 0">
+			<ion-label fixed>Disciplina</ion-label>
+			<ion-select (ionChange)="findNotasDoAluno($event)" [(ngModel)]="curso" name="cursoInstance">
+				<ion-option *ngFor="let curso of cursos" value="{{curso.id}}">{{curso.nome}}</ion-option>
+			</ion-select>
+		</ion-item>
+	</ion-item-group>
+	
+	<ion-card *ngFor="let bloco of blocos">
+		<ion-card-header>
+			<b>{{bloco.nome}}</b>
+		</ion-card-header>
+		<ion-card-content>
+		<ion-list>
+			<ion-item *ngFor="let item of bloco.itens">
+			<small>{{item.sigla}}</small> - <small>{{item.nome}}</small> <ion-badge outline color="light" item-end>&nbsp;{{item.nota}}&nbsp;</ion-badge>
+			</ion-item>
+		</ion-list>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

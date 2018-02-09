@@ -1,0 +1,42 @@
+<!--
+  Generated template for the AulaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Aulas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      refreshingSpinner="crescent">
+    </ion-refresher-content>
+  </ion-refresher>
+	<div padding *ngIf="itens?.length == 0" class="empty">
+		<span class="spanEmpty">{{msg}}</span>
+	</div>
+	<ion-list *ngIf="itens?.length > 0">
+    <p><span>Exibindo {{itens?.length}} aulas.</span></p>
+		<ion-item *ngFor="let item of itens" (click)="itemTapped($event, item)">
+			<ion-label>
+				<b>{{item.curso}}</b>&nbsp;&nbsp;<ion-badge class="reposicao" *ngIf="item.aulaOriginalId" item-end><small>Reposição</small></ion-badge><br/><br/>
+				<p><span>Data da Aula:</span> {{item.dataHoraInicio | date:'dd/MM/yyyy'}}</p>
+				<p><span>Horário:</span> {{item.dataHoraInicio | date:'HH:mm'}} até {{item.dataHoraTermino | date:'HH:mm'}} </p>
+				<p><span>Professor:</span> {{item.professor}}</p>
+				<p><b><ion-badge *ngIf="item.statusAula == 'Realizada'" item-end>{{item.statusAula}}</ion-badge><span *ngIf="item.statusAula != 'Realizada' && item.statusAula != 'Agendada'" item-end><br/>{{item.statusAula}}<br/></span><span *ngIf="item.statusAluno">{{item.statusAluno}}</span></b></p>
+			</ion-label>
+			<button ion-button item-end outline>
+				<ion-icon name="arrow-forward"></ion-icon>
+			</button>
+      </ion-item>
+  </ion-list>
+</ion-content>

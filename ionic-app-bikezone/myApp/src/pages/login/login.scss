@@ -1,0 +1,22 @@
+page-login {
+    .login-container {
+        background-image: url(http://app.sistemaquality.com.br/static/img/subtle_dots.png);
+    }
+    .login {
+        position: relative;
+        margin: 0 auto;
+        padding: 50px 25px 25px 25px;
+        margin-top: -50px;
+        border-radius: 5px;
+        max-width: 375px;
+        width: 100%;
+    }
+    .card-logo {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 30px auto 0;
+        border-radius: 5px;
+        z-index: 100;
+    }
+}
