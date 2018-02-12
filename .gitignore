@@ -1,5 +1,6 @@
 ### Files to ignore
 
+/BikeZoneApp
 /target
 /target-eclipse
 /test
