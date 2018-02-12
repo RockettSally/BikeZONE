@@ -1,5 +1,13 @@
 package br.com.rockettsally.bikezone.api
 
+import bikezone.Cliente
+
+import grails.converters.JSON
+
+import org.springframework.http.HttpStatus
+import org.codehaus.groovy.grails.web.json.JSONArray;
+import org.codehaus.groovy.grails.web.json.JSONObject;
+
 class ApiController {
 
     def index() {
@@ -8,11 +16,7 @@ class ApiController {
         
     }
     
-    def listarClientes(){
-        
-    }
-    
-    def buscarConversaSelecionada(Long id){
+    def buscarClientes(){
 
             long tempoInicial = System.currentTimeMillis();
 
@@ -44,9 +48,8 @@ class ApiController {
     def montarJSONcliente(Cliente clienteInstance){
         
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put('id', notificacaoInstance?.id);
-            jsonObject.put('nome', notificacaoInstance?.nome);
-            jsonObject.put('status', 'ok');
+            jsonObject.put('id', clienteInstance?.id);
+            jsonObject.put('nome', clienteInstance?.nome);
 
             return jsonObject;
     }
