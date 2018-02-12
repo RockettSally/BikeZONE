@@ -12,7 +12,7 @@
 				Contato
 			</th>
 			<th>
-				Telefone
+				Celular
 			</th>
 			<th>
 				Ações
