@@ -4,6 +4,7 @@
 		<title>${clientesLabel} - BikeZONE</title>
 	</head>
 	<body>
+		<g:hiddenField name="idEdit" value="${idEdit}"/>
 		<div class="row">
 			<div class="col s12">
 				<h1>${clientesLabel}</h1>

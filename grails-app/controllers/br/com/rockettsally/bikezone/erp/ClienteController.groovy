@@ -13,8 +13,11 @@ public class ClienteController {
 	String actionLabel;
 	String clientName;
 	
-    def index() {
-		[clientesLabel: "Clientes", clienteLabel: "Cliente"];
+    def index(Long id) {
+		
+		println id;
+		
+		[clientesLabel: "Clientes", clienteLabel: "Cliente", idEdit: id];
 	}
 	
 	def buscarClientes(){
